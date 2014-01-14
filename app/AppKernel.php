@@ -18,7 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
         );
 
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+        if (static::isDebugEnabledForEnvironment($this->getEnvironment())) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
@@ -30,5 +30,39 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+    }
+
+    public static function isDebugEnabledForEnvironment($environment)
+    {
+        return in_array($environment, static::getDebugEnabledEnvironments());
+    }
+
+    public static function getDebugEnabledEnvironments()
+    {
+        return array('dev', 'test');
+    }
+
+    public static function getEnvironmentNameFromEnvVars($defaultEnv = 'prod')
+    {
+        $varnames = self::getEnvironmentVariableNames();
+
+        if (!is_array($varnames)) {
+            $varnames = array($varnames);
+        }
+
+        foreach ($varnames as $name) {
+            $env = getenv($name);
+
+            if (!empty($env)) {
+                return $env;
+            }
+        }
+
+        return $defaultEnv;
+    }
+
+    public static function getEnvironmentVariableNames()
+    {
+        return array('APPLICATION_ENV', 'APP_ENV');
     }
 }
