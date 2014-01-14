@@ -1,8 +1,12 @@
-Symfony Standard Edition
-========================
+Symfony Standard Edition - Environment Bootstrapped
+===================================================
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony2
 application that you can use as the skeleton for your new applications.
+
+This version of Symfony Standard Edition has been modified to infer
+the application environment based on a system environment variable. See
+section 3) of this document for more information.
 
 This document contains information on how to download, install, and start
 using Symfony. For a more detailed explanation, see the [Installation][1]
@@ -61,7 +65,14 @@ Access the `config.php` script from a browser:
 
 If you get any warnings or recommendations, fix them before moving on.
 
-3) Browsing the Demo Application
+3) Setting the Application Environment
+--------------------------------------
+
+To modify the environment used by Symfony, you need to set the `APPLICATION_ENV`
+(or `APP_ENV` for Amazon EC2 instance). Please refer to your web server and OS
+documentation on how to set an environment variable.
+
+4) Browsing the Demo Application
 --------------------------------
 
 Congratulations! You're now ready to use Symfony.
@@ -76,7 +87,7 @@ To see a real-live Symfony page in action, access the following page:
 
     web/app_dev.php/demo/hello/Fabien
 
-4) Getting started with Symfony
+5) Getting started with Symfony
 -------------------------------
 
 This distribution is meant to be the starting point for your Symfony
