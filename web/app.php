@@ -26,12 +26,7 @@ if (AppKernel::isDebugEnabledForEnvironment($environment)) {
     /*
     // Enable Symfony's handling of uncaught errors in Production mode
     // DON'T FORGET TO MODIFY THE ERROR TEMPLATE
-    error_reporting(-1);
-
-    ErrorHandler::register(null, false);
-    if ('cli' !== php_sapi_name()) {
-        ExceptionHandler::register(false);
-    }
+    Debug::enable();
     */
 }
 
