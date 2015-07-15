@@ -87,13 +87,16 @@ It comes pre-configured with the following bundles:
   * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
     capabilities
 
+  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
+    integration
+
 All libraries and bundles included in the Symfony WMS Edition are
 released under the MIT or BSD license.
 
 Enjoy!
 
 [1]:  http://symfony.com/doc/3.0/book/installation.html
-[6]:  http://symfony.com/doc/3.0/bundles/SensioFrameworkExtraBundle/index.html
+[6]:  http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
 [7]:  http://symfony.com/doc/3.0/book/doctrine.html
 [8]:  http://symfony.com/doc/3.0/book/templating.html
 [9]:  http://symfony.com/doc/3.0/book/security.html
@@ -102,4 +105,4 @@ Enjoy!
 [12]: http://symfony.com/doc/3.0/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/3.0/bundles/SensioGeneratorBundle/index.html
 [14]: http://httpd.apache.org/docs/2.4/mod/mod_env.html
-[15]: http://symfony.com/doc/2.3/bundles/DoctrineMigrationsBundle/index.html
+[15]: http://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html

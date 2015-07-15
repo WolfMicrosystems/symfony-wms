@@ -28,11 +28,6 @@ class RootPackageInstallSubscriber implements EventSubscriberInterface
         'symfony-web-dir' => 'web'
     );
 
-    public static function installAcmeDemoBundle(CommandEvent $event)
-    {
-        ScriptHandler::installAcmeDemoBundle($event);
-    }
-
     public static function setupNewDirectoryStructure(CommandEvent $event)
     {
         $options = self::getOptions($event);
@@ -53,7 +48,6 @@ class RootPackageInstallSubscriber implements EventSubscriberInterface
         return array(
             ScriptEvents::POST_INSTALL_CMD => array(
                 array('setupNewDirectoryStructure', 512),
-                array('installAcmeDemoBundle', 0)
             ),
         );
     }
