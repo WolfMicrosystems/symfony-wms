@@ -1,22 +1,53 @@
-Symfony Standard Edition
+Symfony WMS Edition
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
+Welcome to the Symfony WMS Edition - a fully-functional Symfony2
 application that you can use as the skeleton for your new applications.
 
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
+Differences between the Standard and WMS Edition
+---------------------------------------------------
+
+Symfony WMS Edition is a modified version of the Standard Symfony2
+distribution. Here is an overview of the differences between the Standard
+Edition and the WMS Edition
+
+  * **Environment infered from ENV variables**  
+    Symfony WMS Edition uses a system environment variable to determine the
+    correct AppKernel environment. Please refer to this document
+    for information on how to configure your environment.
+
+  * **DoctrineMigrationsBundle included**  
+    In order to simplify the initial setup process, this version of Symfony
+    comes preconfigured with the [DoctrineMigrationsBundle][15].
+
+Setting the Application Environment
+--------------------------------------
+
+To modify the environment used by Symfony, you need to set the `APPLICATION_ENV`
+(or `APP_ENV` for Amazon EC2 instance). Please refer to your web server and OS
+documentation on how to set an environment variable.
+
+If is also possible to use [Apache httpd's `mod_env` module][14] to set the
+environment variable. Such configuration would look like this in your `httpd.conf`
+file:
+
+    <Directory "/path/to/symfony/">
+        SetEnv APPLICATION_ENV "dev"
+    </Directory>
+
 What's inside?
 --------------
 
-The Symfony Standard Edition is configured with the following defaults:
+The Symfony WMS Edition is configured with the following defaults:
 
   * An AppBundle you can use to start coding;
 
   * Twig as the only configured template engine;
 
-  * Doctrine ORM/DBAL;
+  * Doctrine ORM/DBAL (including Migrations);
 
   * Swiftmailer;
 
@@ -30,6 +61,9 @@ It comes pre-configured with the following bundles:
     template and routing annotation capability
 
   * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+
+  * [**DoctrineMigrationsBundle**][15] - Adds support for database migrations
+    using Doctrine
 
   * [**TwigBundle**][8] - Adds support for the Twig templating engine
 
@@ -56,7 +90,7 @@ It comes pre-configured with the following bundles:
   * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
     integration
 
-All libraries and bundles included in the Symfony Standard Edition are
+All libraries and bundles included in the Symfony WMS Edition are
 released under the MIT or BSD license.
 
 Enjoy!
@@ -70,3 +104,5 @@ Enjoy!
 [11]: http://symfony.com/doc/2.8/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.8/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.8/bundles/SensioGeneratorBundle/index.html
+[14]: http://httpd.apache.org/docs/2.4/mod/mod_env.html
+[15]: http://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html
