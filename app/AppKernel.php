@@ -13,7 +13,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
@@ -37,7 +36,7 @@ class AppKernel extends Kernel
 
     public static function isDebugEnabledForEnvironment($environment)
     {
-        return in_array($environment, static::getDebugEnabledEnvironments());
+        return in_array($environment, static::getDebugEnabledEnvironments(), true);
     }
 
     public static function getDebugEnabledEnvironments()
