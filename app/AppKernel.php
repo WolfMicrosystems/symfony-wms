@@ -36,7 +36,7 @@ class AppKernel extends Kernel
 
     public static function isDebugEnabledForEnvironment($environment)
     {
-        return in_array($environment, static::getDebugEnabledEnvironments());
+        return in_array($environment, static::getDebugEnabledEnvironments(), true);
     }
 
     public static function getDebugEnabledEnvironments()
