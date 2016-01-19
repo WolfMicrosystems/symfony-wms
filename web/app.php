@@ -20,8 +20,6 @@ $loader->unregister();
 $apcLoader->register(true);
 */
 
-require_once __DIR__.'/../app/AppKernel.php';
-
 $environment = AppKernel::getEnvironmentNameFromEnvVars();
 
 if (AppKernel::isDebugEnabledForEnvironment($environment)) {
